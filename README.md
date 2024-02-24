@@ -142,14 +142,11 @@ git pull base main --allow-unrelated-histories
 To reduce compilation times we have create a proxy file for the libigl Viewer that encapsulates viewer-related function calls. You should be able to use viewer-related functions exactly as they appear in the libigl tutorials. If this does not work, please double check that there is a proxy for the function that you are trying to use in the viewer_proxy.cpp file. If there isn't, please add it yourself following the style for pre-existing functions. Try to avoid frequent updates to the two viewer_proxy files, as these will trigger long compilation times.
 
 ### Solution Submission
-In every assignment directory you will find a 'README.md' file in which we will specify the required screenshots and console outputs. You should briefly summarize and report your results and observations, or discuss possible problems. For a quick introduction of the Markdown syntax see: https://guides.github.com/features/mastering-markdown/
-
-To submit your solution of the assignment please add the following commit message: "Solution assignment X". E.g:
+To submit your solution of the assignment (code) please add the following commit message: "Solution assignment X". E.g:
 ```bash
 git commit -m "Solution assignment X"
 git push
 ```
-Please make sure your code compiles on either Unix or Windows.
 You can keep updating your code before the deadline. After the deadline, please don't change the code of that assignment before we send you the scores.
 
 ### Using github issues for discussion 
