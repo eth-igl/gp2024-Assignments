@@ -76,7 +76,7 @@ Please show your answer in screenshot/photos (or link to a PDF). Make sure your 
 
 ### 2 - Theory Question 2
 
-**Compute the closed-form Jacobian of the MLS approximation.**
+**Compute the closed-form Gradient of the MLS approximation.**
 
 Please show your answer in screenshot/photos (or link to a PDF). Make sure your answer is readable. You can add more pages by modifying the table.
 
