@@ -28,7 +28,7 @@ ViewerProxy &ViewerProxy::get_instance() {
     _instance = new ViewerProxy();
     init_igl_viewer();
 
-    viewer.callback_key_down = [&](igl::opengl::glfw::Viewer &viewer,
+    viewer.callback_key_pressed = [&](igl::opengl::glfw::Viewer &viewer,
                                    unsigned char key, int modifiers) {
       return _instance->callback_key_down(*_instance, key, modifiers);
     };
