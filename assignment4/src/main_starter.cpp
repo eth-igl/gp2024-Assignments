@@ -3,7 +3,7 @@
 #include <igl/local_basis.h>
 #include <imgui.h>
 
-#include "viewer/viewer_proxy.h"
+#include "viewer_proxy.h"
 
 /*** insert any necessary libigl headers here ***/
 
@@ -13,8 +13,6 @@ using Viewer = ViewerProxy;
 
 #define CORE_3D viewer.core(1)
 #define CORE_2D viewer.core(2)
- 
-ViewerProxy &viewer = ViewerProxy::get_instance();
 
 // vertex array, #V x3
 Eigen::MatrixXd V;
@@ -29,7 +27,7 @@ enum { UNIT_DISK_BOUNDARY, TWO_VERTICES_POSITIONS, NECESSARY_DOF };
 int selected_constraint = 0;
 float TextureResolution = 10;
 
-void Redraw() {
+void Redraw(ViewerProxy& viewer) {
   // Update the mesh in the viewer.
   ViewerProxy::Data mesh_data = viewer.data(0);
   ViewerProxy::Data uv_mesh_data = viewer.data(1);
@@ -185,11 +183,11 @@ bool callback_key_down(Viewer &viewer, unsigned char key, int modifiers) {
     TextureResolution *= 2;
     break;
   }
-  Redraw();
+  Redraw(viewer);
   return true;
 }
 
-bool load_mesh(string filename) {
+bool load_mesh(Viewer& viewer, string filename) {
   viewer.load_mesh(filename, V, F);
   viewer.core().align_camera_center(V);
 
@@ -206,18 +204,19 @@ bool callback_init(Viewer &viewer) {
   // UV mesh.
   viewer.append_mesh().set_visible(false, CORE_3D.id);
 
-  Redraw();
+  Redraw(viewer);
 
   return false;
 }
 
 int main(int argc, char *argv[]) {
+  ViewerProxy& viewer = ViewerProxy::get_instance();
   if (argc != 2) {
     cout << "Usage ex4_bin <mesh.off/obj>" << endl;
-    load_mesh("../data/cathead.obj");
+    load_mesh(viewer, "../data/cathead.obj");
   } else {
     // Read points and normals
-    load_mesh(argv[1]);
+    load_mesh(viewer, argv[1]);
   }
 
   ViewerProxy::Menu menu = viewer.menu();
@@ -231,7 +230,7 @@ int main(int argc, char *argv[]) {
       ImGui::Combo("Constraints", &selected_constraint, constraints,
                    IM_ARRAYSIZE(constraints));
       if (ImGui::SliderFloat("scale", &TextureResolution, 0, 40)) {
-        Redraw();
+        Redraw(viewer);
       }
 
       // TODO: Add more parameters to tweak here...
