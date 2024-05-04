@@ -95,7 +95,6 @@ void onNewHandleID();
 void applySelection();
 
 bool solve(Viewer &viewer) {
-    /**** Add your code for computing the deformation from handle_vertex_positions and handle_vertices here (replace following line) ****/
     igl::slice_into(handle_vertex_positions, handle_vertices, 1, V);
 
     if (view_mode == ORIGINAL)
