@@ -121,10 +121,11 @@ void get_new_handle_locations() {
                 if (mouse_mode == TRANSLATE)
                     goalPosition += translation.transpose();
                 else if (mouse_mode == ROTATE) {
-                    Eigen::RowVector3f goalPositionCopy = goalPosition;
+                    Eigen::RowVector4f goalPositionCopy;
+                    goalPositionCopy << goalPosition, 0;
                     goalPosition -= handle_centroids.row(moving_handle).cast<float>();
                     igl::rotate_by_quat(goalPosition.data(), rotation.data(), goalPositionCopy.data());
-                    goalPosition = goalPositionCopy;
+                    goalPosition = goalPositionCopy.head(3);
                     goalPosition += handle_centroids.row(moving_handle).cast<float>();
                 }
             }
