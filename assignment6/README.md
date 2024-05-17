@@ -10,7 +10,7 @@ Edit this 'README.md' file to report all your results. Use the `./res` folder to
 
 ### Tasks
 
-1. Read Sec. 1 carefully to get familar with the data format, problem formulation, and mathematical background.
+1. Read Sec. 1 carefully to get familiar with the data format, problem formulation, and mathematical background.
 2. (Task 2) two theoretical discussions 
 3. (Task 3) visualize the animation of the input skeleton of the hand shape from two types of input rotations (sequence and )
 4. (Task 4) compute harmonic skinning weights on selected handles
@@ -21,11 +21,11 @@ Edit this 'README.md' file to report all your results. Use the `./res` folder to
 9. (optional Task 8.2) context-aware per-face LBS
  
 ### Important Note
-1. We do not provide template code for this assignment - feel free to use previous template code if you want
+1. We do not provide a template code for this assignment - feel free to use the previous template code if you want
 2. You can use any functions in libigl, and its dependencies (and [libhedra](https://avaxman.github.io/libhedra/) if you want).
-3. You are allowed to use your previous code (for example, you will find the Poisson Stitching technqiue quite similar to Deformation Transfer that you have implemented in Assignment 5; and also the provided handle selection in A5 might inspire you to design your handle selection tool in Task 4).
+3. You are allowed to use your previous code (for example, you will find the Poisson Stitching technique quite similar to the Deformation Transfer that you have implemented in Assignment 5; and also the provided handle selection in A5 might inspire you to design your handle selection tool in Task 4).
 4. You are allowed to modify this report freely (but please try to stick to some table format of orangizing figures to avoid a 20-page long report)
-5. Please feel free to try other skeletal animation/deformation data you can find online if you find the provided animation is not cool enough (for example [here](https://www.mixamo.com/#/), but note that they might be in different data format than the provide ones).
+5. Please feel free to try other skeletal animation/deformation data you can find online if you find the provided animation is not cool enough (for example [here](https://www.mixamo.com/#/), but note that they might be in a different data format than the provided ones).
 6. Please try to keep your code clean and self-explained (with necessary comments), since we will grade this assignment based on your code as well.
 
 ## Reports
