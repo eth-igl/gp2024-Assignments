@@ -334,6 +334,7 @@ bool callback_pre_draw(Viewer &viewer) {
 
     //update the vertex position all the time
     viewer.data().set_mesh(V, F);
+    viewer.data().compute_normals();
 
 #ifdef UPDATE_ONLY_ON_UP
     //draw only the moving parts with a white line
