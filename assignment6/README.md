@@ -12,7 +12,7 @@ Edit this 'README.md' file to report all your results. Use the `./res` folder to
 
 1. Read Sec. 1 carefully to get familiar with the data format, problem formulation, and mathematical background.
 2. (Task 2) two theoretical discussions 
-3. (Task 3) visualize the animation of the input skeleton of the hand shape from two types of input rotations (sequence and )
+3. (Task 3) visualize the animation of the input skeleton of the hand shape from two types of input rotations (sequence and interpolation to target rotation)
 4. (Task 4) compute harmonic skinning weights on selected handles
 5. (Task 5) per-vertex LBS + rotation/translation + Lerp
 6. (Task 6) per-vertex LBS + dual quaternion + Nlerp
